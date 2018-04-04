@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <script src="../../main.js"></script>
+    <script src="http://satoken.nkmr.io/research/javascripts/main.js"></script>
     <title>暗記学習支援</title>
 </head>
 <body>
