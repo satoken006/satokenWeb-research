@@ -61,9 +61,7 @@
         require "../../php/function.php";
         require "../php/connectToMySQL.php";
 
-        $connection = connect_to_mysql( "satoken_web" );
-        showResearches( "accel" );
-        mysql_close( $connection );
+        showResearches( $connection, "accel" );
 
         ?>
     </div>

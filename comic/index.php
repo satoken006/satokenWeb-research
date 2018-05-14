@@ -61,10 +61,7 @@
         require "../../php/function.php";
         require "../php/connectToMySQL.php";
 
-        $connection = connect_to_mysql( "satoken_web" );
-        showResearches( "comic" );
-        mysql_close( $connection );
-
+        showResearches( $connection, "comic" );
 
         ?>
     </div>

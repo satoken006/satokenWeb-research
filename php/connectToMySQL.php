@@ -1,13 +1,11 @@
 <?php
 
-$connection = connect_to_mysql( "satoken_web" );
-
-function showResearches( $category ){
+function showResearches( $_connection, $_category ){
     $mode = $_GET["mode"];
 
-    $q = "SELECT * FROM research WHERE category='$category'";
-    $r = mysql_query( $q );
-    while( $c = mysql_fetch_array( $r ) ){
+    $q = "SELECT * FROM research WHERE category='$_category'";
+
+    foreach( $_connection->query( $q ) as $c ){
 
         if( $c[7] == "private" && $mode != "admin" ){
             continue;
@@ -45,6 +43,8 @@ function showResearches( $category ){
 
         echo $item;
     }
+
+    $_connection = null;
 }
 
 ?>
