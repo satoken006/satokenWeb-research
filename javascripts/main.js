@@ -1,4 +1,4 @@
- $(function(){
+$(function(){
     $(".research-category-box, .achievement-box").mouseover(function(){
         $(this).css("background-color","#4ECCBF");
         $(this).find("a").find("img").css("opacity", 0);
