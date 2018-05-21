@@ -1,7 +1,7 @@
 <?php
 
 function showResearches( $_connection, $_category ){
-    
+
     $mode = "";
     if( isset($_GET["mode"]) ){
         $mode = $_GET["mode"];
@@ -29,19 +29,23 @@ function showResearches( $_connection, $_category ){
         $item .= "</div>";
 
         $item .= "<div class='achievement-list'>";
-        $json_arr = json_decode( $achievements );
-        foreach( $json_arr as $obj ){
-            $name  = $obj->{"name"};
-            $label = $obj->{"label"};
-            $url   = $obj->{"url"};
 
-            $item .= "<div class='achievement-box'>";
-            $item .= "<a href='$url'>";
-            $item .= "<img src='../../../img/achievement/$name.jpg'>";
-            $item .= "<p>$label</p>";
-            $item .= "</a>";
-            $item .= "</div>";
+        $achievement_json = json_decode( $achievements );
+        if( $achievement_json != null ){
+            foreach( $achievement_json as $obj ){
+                $name  = $obj->{"name"};
+                $label = $obj->{"label"};
+                $url   = $obj->{"url"};
+
+                $item .= "<div class='achievement-box'>";
+                $item .= "<a href='$url'>";
+                $item .= "<img src='../../../img/achievement/$name.jpg'>";
+                $item .= "<p>$label</p>";
+                $item .= "</a>";
+                $item .= "</div>";
+            }
         }
+        
         $item .= "</div>";
         $item .= "</div>";
 
