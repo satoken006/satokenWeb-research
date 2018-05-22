@@ -9,7 +9,7 @@ function showResearches( $_connection, $_category ){
 
     $q = "SELECT * FROM research WHERE category='$_category'";
 
-    foreach( $_connection->query( $q ) as list($id, $date, $category, $title, $description, $thumbnail_url, $achievements, $status) ){
+    foreach( $_connection->query( $q ) as list($id, $date, $category, $title, $description, $quote, $thumbnail_url, $achievements, $status) ){
 
         if( $status == "private" && $mode != "admin" ){
             continue;
@@ -22,7 +22,8 @@ function showResearches( $_connection, $_category ){
         $item .= "<div class='achievement-heading'>$title</div>";
         $item .= "</div>";
         $item .= "<div class='item-desc'>";
-        $item .= $description;
+        $item .= $description."<br><br>";
+        $item .= $quote;
         $item .= "</div>";
         $item .= "<div class='item-thumbnail'>";
         $item .= "<img src='$thumbnail_url'>";
