@@ -21,12 +21,14 @@ function showResearches( $_connection, $_category ){
         $item .= "<img class='symbol' src='../../img/research/$category.png'>";
         $item .= "<div class='achievement-heading'>$title</div>";
         $item .= "</div>";
+
+        $item .= "<div class='item-thumbnail'>";
+        $item .= "<img src='$thumbnail_url'>";
+        $item .= "</div>";
+
         $item .= "<div class='item-desc'>";
         $item .= $description."<br><br>";
         $item .= $quote;
-        $item .= "</div>";
-        $item .= "<div class='item-thumbnail'>";
-        $item .= "<img src='$thumbnail_url'>";
         $item .= "</div>";
 
         $item .= "<div class='achievement-list'>";
